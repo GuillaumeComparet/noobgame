@@ -1,0 +1,157 @@
+body {
+    background-color: slategray;
+}
+
+.game {
+    height: 50vh;
+}
+
+.howToPlay {
+        text-align: center;
+        padding: 2em;
+        border: 10px solid rgba(0, 0, 255, 0.369);
+        border-radius: 20px;
+        margin-top: 1em;
+        margin-bottom: 1em;
+}
+
+#howToPlay-Title {
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0.5em;
+}
+
+p {
+    font-size: 1.5em;
+    padding: 0.2em;
+}
+
+.listDungeons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.DungeonDesign {
+    position: relative;
+}
+
+.dungeonImage {
+    height: 30vh;
+}
+
+.portalDesign {
+        position: absolute;
+        bottom: 0%;
+        width: 12em;
+}
+
+.listInventory {
+    margin-top: 10em;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+}
+
+.inventory {
+    border: 3px solid black;
+    max-width: 30%;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.484);
+}
+
+.inventoryH1 {
+    font-size: 2em;
+    font-weight: 700;
+    border-bottom: 3px solid black;
+    text-align: center;
+    padding: 5px;
+
+}
+
+.equipement {
+    max-width: 85px;
+    margin: 5px;
+}
+
+.trash {
+    background-color:gray;
+}
+
+.common {
+    background-color:lightgrey;
+}
+
+.uncommon {
+    background-color:green;
+}
+
+.rare {
+    background-color:blue;
+}
+
+.epik {
+    background-color:purple;
+}
+
+.legendary {
+    background-color:orange;
+}
+
+
+.pointLife {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+.fight-phase {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10vh;
+}
+
+#player {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ennemy {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.imgFight {
+    width: 30vh;
+}
+
+.imgFightButton {
+    width: 15vh;
+}
+
+.hidden {
+    display: none;
+}
+
+.fightButtons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+}
+
+.damageTextPlayer {
+    display: 10px;
+    border: 3px solid green;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.damageTextEnnemy {
+    display: 10px;
+    border: 3px solid red;
+    border-radius: 15px;
+    padding: 10px;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noob Game</title>
+</head>
+<body>
+    <div class="howToPlay">
+        <h1 id="howToPlay-Title">Bienvenue dans le terrible ( ou pas ) univers de N00b Game</h1>
+        <p>Te voici arrivé dans N00b Game, le seul jeu dans lequel même les noob peuvent loot de l'équipement légendaire</p>
+        <p>Rien de plus simple, il te suffit de rentrer dans les différents donjons par le biais des portails bleus</p>
+        <p>Le contenu que tu vois ici est en développement, et sera prochainement complexifié ( rassure toi, il restera toujours accessible au n00b que tu es)</p>
+    </div>
+
+    <div class="game">
+    <div class="listDungeons">
+        <div class="DungeonDesign">
+            <img src="../img/portal.webp" id="swordPortal" class="portalDesign" alt="">
+            <img src="../img/illidan.jpg" class="dungeonImage" alt="">
+        </div>  
+        <div class="DungeonDesign">
+            <img src="../img/portal.webp" id="shieldPortal" class="portalDesign" alt="">
+            <img src="../img/lichking.avif" class="dungeonImage" alt="">
+        </div>
+        <div class="DungeonDesign">
+            <img src="../img/portal.webp" id="armorPortal" class="portalDesign" alt="">
+            <img src="../img/onyxia.jpg" class="dungeonImage" alt="">
+        </div>
+    </div>
+   <div class="listInventory">
+    <div id="swordInventory" class="inventory">
+        <h1 class="inventoryH1">Tes belles épées</h1>
+
+    </div>
+    <div id="shieldInventory" class="inventory">
+        <h1 class="inventoryH1">Tes beaux boucliers</h1>
+    </div>
+    <div id="armorInventory" class="inventory">
+        <h1 class="inventoryH1">Tes belles armures</h1>
+    </div>
+   </div>
+    </div>
+
+    <!-- Phase de combat des épées-->
+
+    <div class="fight-phase fightSword hidden">
+        <div id="player">
+            <img class="imgFight" src="../img/fightertroll.png" alt="">
+            <div id="playerLifeBarSword" class="barLife"></div>
+
+        </div>
+
+        <div class="fightButtons">
+            <p id="playerDamageTextSword" class="damageTextPlayer"></p>
+            <img class="imgFightButton" id="imgFightButtonSword" src="../img/fightattack.png" alt="">
+            <p id="ennemyDamageTextSword" class="damageTextEnnemy"></p>
+
+        </div>
+
+        <div class="ennemy">
+            <img class="imgFight" src="../img/illidanFight.png" alt="">
+            <div id="ennemyLifeBarSword" class="barLife">
+
+            </div>    
+        </div>
+    </div>
+
+    <!-- Phase de combat des boucliers-->
+
+    <div class="fight-phase fightShield hidden">
+        <div id="player">
+            <img class="imgFight" src="../img/fightertroll.png" alt="">
+            <div id="playerLifeBarShield" class="barLife"></div>
+
+        </div>
+
+        <div class="fightButtons">
+            <p id="playerDamageTextShield" class="damageTextPlayer"></p>
+            <img class="imgFightButton" id="imgFightButtonShield" src="../img/fightattack.png" alt="">
+            <p id="ennemyDamageTextShield" class="damageTextEnnemy"></p>
+
+        </div>
+
+        <div class="ennemy">
+            <img class="imgFight" src="../img/lichkingfight2.png" alt="">
+            <div id="ennemyLifeBarShield" class="barLife">
+
+            </div>    
+        </div>
+    </div>
+
+    <!-- Phase de combat des armures-->
+
+    <div class="fight-phase fightArmor hidden">
+        <div id="player">
+            <img class="imgFight" src="../img/fightertroll.png" alt="">
+            <div id="playerLifeBarArmor" class="barLife"></div>
+
+        </div>
+
+        <div class="fightButtons">
+            <p id="playerDamageTextArmor" class="damageTextPlayer"></p>
+            <img class="imgFightButton" id="imgFightButtonArmor" src="../img/fightattack.png" alt="">
+            <p id="ennemyDamageTextArmor" class="damageTextEnnemy"></p>
+
+        </div>
+
+        <div class="ennemy">
+            <img class="imgFight" src="../img/onyxiafight.webp" alt="">
+            <div id="ennemyLifeBarArmor" class="barLife">
+
+            </div>    
+        </div>
+    </div>
+<script src="../js/app.js"></script>    
+</body>
+</html>
