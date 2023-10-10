@@ -113,8 +113,8 @@ function fightPhaseSword(){
     const fightSwordDisplay = document.querySelector('.fightSword');
     menuDisplay.classList.toggle("hidden");
     fightSwordDisplay.classList.toggle("hidden");
-    createPlayerLifeBarSword();
-    createEnnemyLifeBarSword();
+    createPlayerLifeBar('#playerLifeBarSword');
+    createEnnemyLifeBar('#ennemyLifeBarSword');
 }
 
 const buttonSwordDungeon = document.querySelector("#swordPortal");
@@ -127,8 +127,8 @@ function fightPhaseShield(){
 
     menuDisplay.classList.toggle("hidden");
     fightShieldDisplay.classList.toggle("hidden");
-    createPlayerLifeBarShield();
-    createEnnemyLifeBarShield();
+    createPlayerLifeBarShield('#playerLifeBarShield');
+    createEnnemyLifeBarShield('#ennemyLifeBarShield');
 }
 
 const buttonShieldDungeon = document.querySelector("#shieldPortal");
@@ -140,75 +140,60 @@ function fightPhaseArmor(){
 
     menuDisplay.classList.toggle("hidden");
     fightArmorDisplay.classList.toggle("hidden");
-    createPlayerLifeBarArmor();
-    createEnnemyLifeBarArmor();
+    createPlayerLifeBar('#playerLifeBarArmor');
+    createEnnemyLifeBar('#ennemyLifeBarArmor');
 }
 
 const buttonArmorDungeon = document.querySelector("#armorPortal");
 buttonArmorDungeon.addEventListener("click", fightPhaseArmor)
 
-/* Fonctions de combats */
+/* Fonctions des barres de vie */
+let playerLifePoint = 10
+let ennemyLifePoint = 10
+/* Créer barre de vie joueur */
+function createPlayerLifeBar(playerBar){
 
-function calculatePlayerAttack(){
-    const ennemy = Math.round(Math.random()*3);
-    console.log("Ton attaque : " + ennemy);
-    return ennemy;
-}
-
-function calculateEnnemyAttack(){
-    const powerEnnemyAttack = document.querySelector('.fight')
-
-    const ennemy = Math.round(Math.random()*3);
-    console.log("attaque de l'ennemi : " + ennemy);
-    return ennemy;
-}
-
-/* Barres de vie donjon épée*/
-
-/* Barre de vie du joueur*/
-let playerLifePointSword = 10
-function createPlayerLifeBarSword(){
-
-    const playerLifeBarSword = document.querySelector('#playerLifeBarSword');
+    const playerLifeBar = document.querySelector(playerBar);
 
     function clearPlayerLifeBar(){
-        playerLifeBarSword.innerHTML = "";
+        playerLifeBar.innerHTML = "";
     }
 
     clearPlayerLifeBar();
     
-    for(let index = 0; index < playerLifePointSword; index++){
+    for(let index = 0; index < playerLifePoint; index++){
         const lifePoint = document.createElement('img');
         lifePoint.classList.add('pointLife')
         lifePoint.src = '../img/lifeheart.png';
-        playerLifeBarSword.append(lifePoint);
+        playerLifeBar.append(lifePoint);
     }
 }
+/* Créer barre de vie ennemie */
+function createEnnemyLifeBar(ennemyBar){
 
-/* Barre de vie de l'ennemi*/
-let ennemyLifePointSword = 10
-function createEnnemyLifeBarSword(){
-
-    const ennemyLifeBarSword = document.querySelector('#ennemyLifeBarSword');
+    const ennemyLifeBar = document.querySelector(ennemyBar);
 
     function clearEnnemyLifeBar(){
-        ennemyLifeBarSword.innerHTML = "";
+        ennemyLifeBar.innerHTML = "";
     }
 
     clearEnnemyLifeBar();
     
-    for(let index = 0; index < ennemyLifePointSword; index++){
+    for(let index = 0; index < ennemyLifePoint; index++){
         const lifePoint = document.createElement('img');
         lifePoint.classList.add('pointLife')
         lifePoint.src = '../img/lifeheart.png';
-        ennemyLifeBarSword.append(lifePoint);
+        ennemyLifeBar.append(lifePoint);
     }
 }
+/* Barre de vie du joueur*/
+
+/* Barre de vie de l'ennemi*/
+
 
 /* Barres de vie donjon bouclier*/
 
 /* Barre de vie du joueur*/
-let playerLifePointShield = 10
 function createPlayerLifeBarShield(){
 
     const playerLifeBarShield = document.querySelector('#playerLifeBarShield');
@@ -219,7 +204,7 @@ function createPlayerLifeBarShield(){
 
     clearPlayerLifeBar();
     
-    for(let index = 0; index < playerLifePointShield; index++){
+    for(let index = 0; index < playerLifePoint; index++){
         const lifePoint = document.createElement('img');
         lifePoint.classList.add('pointLife')
         lifePoint.src = '../img/lifeheart.png';
@@ -228,7 +213,6 @@ function createPlayerLifeBarShield(){
 }
 
 /* Barre de vie de l'ennemi*/
-let ennemyLifePointShield = 10
 function createEnnemyLifeBarShield(){
 
     const ennemyLifeBarShield = document.querySelector('#ennemyLifeBarShield');
@@ -239,7 +223,7 @@ function createEnnemyLifeBarShield(){
 
     clearEnnemyLifeBar();
     
-    for(let index = 0; index < ennemyLifePointShield; index++){
+    for(let index = 0; index < ennemyLifePoint; index++){
         const lifePoint = document.createElement('img');
         lifePoint.classList.add('pointLife')
         lifePoint.src = '../img/lifeheart.png';
@@ -247,116 +231,61 @@ function createEnnemyLifeBarShield(){
     }
 }
 
-/* Barres de vie donjon armure*/
-
-/* Barre de vie du joueur*/
-let playerLifePointArmor = 10
-function createPlayerLifeBarArmor(){
-
-    const playerLifeBarArmor = document.querySelector('#playerLifeBarArmor');
-
-    function clearPlayerLifeBar(){
-        playerLifeBarArmor.innerHTML = "";
-    }
-
-    clearPlayerLifeBar();
-    
-    for(let index = 0; index < playerLifePointArmor; index++){
-        const lifePoint = document.createElement('img');
-        lifePoint.classList.add('pointLife')
-        lifePoint.src = '../img/lifeheart.png';
-        playerLifeBarArmor.append(lifePoint);
-    }
-}
-
-/* Barre de vie de l'ennemi*/
-let ennemyLifePointArmor = 10
-function createEnnemyLifeBarArmor(){
-
-    const ennemyLifeBarArmor = document.querySelector('#ennemyLifeBarArmor');
-
-    function clearEnnemyLifeBar(){
-        ennemyLifeBarArmor.innerHTML = "";
-    }
-
-    clearEnnemyLifeBar();
-    
-    for(let index = 0; index < ennemyLifePointArmor; index++){
-        const lifePoint = document.createElement('img');
-        lifePoint.classList.add('pointLife')
-        lifePoint.src = '../img/lifeheart.png';
-        ennemyLifeBarArmor.append(lifePoint);
-    }
-}
-
-
 /* Fonctions de combats */
-
-/* Combat épée */
-function calculatePlayerAttackSword(){
+function calculatePlayerAttack(playerDamage){
     const ennemy = Math.round(Math.random()*3);
-    const powerPlayerAttackSword = document.querySelector('#playerDamageTextSword');
-    powerPlayerAttackSword.textContent="Tu infliges " + ennemy + " points de dégats a l'ennemi";
+    const powerPlayerAttack = document.querySelector(playerDamage);
+    powerPlayerAttack.textContent="Tu infliges " + ennemy + " points de dégats a l'ennemi";
     console.log("Ton attaque : " + ennemy);
     return ennemy;
 }
 
-function calculateEnnemyAttackSword(){
+function calculateEnnemyAttack(ennemyDamage){
     const ennemy = Math.round(Math.random()*3);
-    const powerEnnemyAttackSword = document.querySelector('#ennemyDamageTextSword');
-    powerEnnemyAttackSword.textContent="L'ennemi t'inflige " + ennemy + " points de dégats";
+    const powerEnnemyAttack = document.querySelector(ennemyDamage);
+    powerEnnemyAttack.textContent="L'ennemi t'inflige " + ennemy + " points de dégats";
     console.log("attaque de l'ennemi : " + ennemy);
     return ennemy;
 }
 
-function ennemyAttackPhaseSword(){
-
-    function ennemyAttack(){
-    const hpPlayerDuringFight = playerLifePointSword - calculateEnnemyAttackSword();
+/* Fonctions pour calculer les dégats */
+function ennemyAttack(ennemyText){
+    const hpPlayerDuringFight = playerLifePoint - calculateEnnemyAttack(ennemyText);
     return hpPlayerDuringFight;
     }
 
-    playerLifePointSword = ennemyAttack();
-
-    createPlayerLifeBarSword();
-    }
-
-function playerAttackPhaseSword(){
-
-    function playerAttack(){
-        const hpEnnemyDuringFight = ennemyLifePointSword - calculatePlayerAttackSword();
+function playerAttack(playerText){
+        const hpEnnemyDuringFight = ennemyLifePoint - calculatePlayerAttack(playerText);
         return hpEnnemyDuringFight;
     }
-    
-    ennemyLifePointSword = playerAttack();
-    
-    createEnnemyLifeBarSword();
-    }
 
-    function fightSword() {
-        playerAttackPhaseSword();
-        ennemyAttackPhaseSword();
-        if (ennemyLifePointSword <= 0 && playerLifePointSword <= 0){
+/* Fonction lancement dégats donjon épée + résultat combat*/
+function fightSword() {
+        ennemyLifePoint = playerAttack('#playerDamageTextSword')
+        createEnnemyLifeBar('#ennemyLifeBarSword')
+        playerLifePoint = ennemyAttack('#ennemyDamageTextSword');
+        createPlayerLifeBar('#playerLifeBarSword');
+        if (ennemyLifePoint <= 0 && playerLifePoint <= 0){
             alert("Match nul");
             fightPhaseSword();
-            ennemyLifePointSword = 10;
-            playerLifePointSword = 10;
+            ennemyLifePoint = 10;
+            playerLifePoint = 10;
         }
-        if (ennemyLifePointSword <= 0){
+        if (ennemyLifePoint <= 0){
             alert("Tu as gagné !");
             winLootSword();
-            ennemyLifePointSword = 10;
-            playerLifePointSword = 10;
+            ennemyLifePoint = 10;
+            playerLifePoint = 10;
         }
-        if (playerLifePointSword <= 0){
+        if (playerLifePoint <= 0){
             alert("Tu as perdu");
             fightPhaseSword();
-            ennemyLifePointSword = 10;
-            playerLifePointSword = 10;
+            ennemyLifePoint = 10;
+            playerLifePoint = 10;
         }
     }
 
-    function winLootSword(){
+function winLootSword(){
         fightPhaseSword();
         lootSword();
     }
@@ -364,67 +293,30 @@ function playerAttackPhaseSword(){
 const btnFightSword = document.querySelector('#imgFightButtonSword');
 btnFightSword.addEventListener('click', fightSword);
 
-/* Combat bouclier */
-function calculatePlayerAttackShield(){
-    const ennemy = Math.round(Math.random()*3);
-    const powerPlayerAttackShield = document.querySelector('#playerDamageTextShield');
-    powerPlayerAttackShield.textContent="Tu infliges " + ennemy + " points de dégats a l'ennemi";
-    console.log("Ton attaque : " + ennemy);
-    return ennemy;
-}
-
-function calculateEnnemyAttackShield(){
-    const ennemy = Math.round(Math.random()*3);
-    const powerEnnemyAttackShield = document.querySelector('#ennemyDamageTextShield');
-    powerEnnemyAttackShield.textContent="L'ennemi t'inflige " + ennemy + " points de dégats";
-    console.log("attaque de l'ennemi : " + ennemy);
-    return ennemy;
-}
-
-function ennemyAttackPhaseShield(){
-
-    function ennemyAttack(){
-    const hpPlayerDuringFight = playerLifePointShield - calculateEnnemyAttackShield();
-    return hpPlayerDuringFight;
-    }
-
-    playerLifePointShield = ennemyAttack();
-
-    createPlayerLifeBarShield();
-    }
-
-function playerAttackPhaseShield(){
-
-    function playerAttack(){
-        const hpEnnemyDuringFight = ennemyLifePointShield - calculatePlayerAttackShield();
-        return hpEnnemyDuringFight;
-    }
-    
-    ennemyLifePointShield = playerAttack();
-    
-    createEnnemyLifeBarShield();
-    }
+/* Fonction lancement dégats donjon bouclier + résultat combat*/
 
 function fightShield() {
-    playerAttackPhaseShield();
-    ennemyAttackPhaseShield();
-    if (ennemyLifePointShield <= 0 && playerLifePointShield <= 0){
+    ennemyLifePoint = playerAttack('#playerDamageTextShield')
+    createEnnemyLifeBar('#ennemyLifeBarShield')
+    playerLifePoint = ennemyAttack('#ennemyDamageTextShield');
+    createPlayerLifeBar('#playerLifeBarShield');
+    if (ennemyLifePoint <= 0 && playerLifePoint <= 0){
         alert("Match nul");
         fightPhaseShield();
-        ennemyLifePointShield = 10;
-        playerLifePointShield = 10;
+        ennemyLifePoint = 10;
+        playerLifePoint = 10;
     }
-    if (ennemyLifePointShield <= 0){
+    if (ennemyLifePoint <= 0){
         alert("Tu as gagné !");
         winLootShield();
-        ennemyLifePointShield = 10;
-        playerLifePointShield = 10;
+        ennemyLifePoint = 10;
+        playerLifePoint = 10;
     }
-    if (playerLifePointShield <= 0){
+    if (playerLifePoint <= 0){
         alert("Tu as perdu");
         fightPhaseShield();
-        ennemyLifePointShield = 10;
-        playerLifePointShield = 10;
+        ennemyLifePoint = 10;
+        playerLifePoint = 10;
     }
 }
 
@@ -436,67 +328,30 @@ function winLootShield(){
 const btnFightShield = document.querySelector('#imgFightButtonShield');
 btnFightShield.addEventListener('click', fightShield);
 
-/* Combat armure */
-
-function calculatePlayerAttackArmor(){
-    const ennemy = Math.round(Math.random()*3);
-    const powerPlayerAttackArmor = document.querySelector('#playerDamageTextArmor');
-    powerPlayerAttackArmor.textContent="Tu infliges " + ennemy + " points de dégats a l'ennemi";
-    console.log("Ton attaque : " + ennemy);
-    return ennemy;
-}
-
-function calculateEnnemyAttackArmor(){
-    const ennemy = Math.round(Math.random()*3);
-    const powerEnnemyAttackArmor = document.querySelector('#ennemyDamageTextArmor');
-    powerEnnemyAttackArmor.textContent="L'ennemi t'inflige " + ennemy + " points de dégats";
-    console.log("attaque de l'ennemi : " + ennemy);
-    return ennemy;
-}
-function ennemyAttackPhaseArmor(){
-
-    function ennemyAttack(){
-    const hpPlayerDuringFight = playerLifePointArmor - calculateEnnemyAttackArmor();
-    return hpPlayerDuringFight;
-    }
-
-    playerLifePointArmor = ennemyAttack();
-
-    createPlayerLifeBarArmor();
-    }
-
-function playerAttackPhaseArmor(){
-
-    function playerAttack(){
-        const hpEnnemyDuringFight = ennemyLifePointArmor - calculatePlayerAttackArmor();
-        return hpEnnemyDuringFight;
-    }
-    
-    ennemyLifePointArmor = playerAttack();
-    
-    createEnnemyLifeBarArmor();
-    }
+/* Fonction lancement dégats donjon armure + résultat combat*/
 
 function fightArmor() {
-    playerAttackPhaseArmor();
-    ennemyAttackPhaseArmor();
-    if (ennemyLifePointArmor <= 0 && playerLifePointArmor <= 0){
+    ennemyLifePoint = playerAttack('#playerDamageTextArmor')
+    createEnnemyLifeBar('#ennemyLifeBarArmor')
+    playerLifePoint = ennemyAttack('#ennemyDamageTextArmor');
+    createPlayerLifeBar('#playerLifeBarArmor');
+    if (ennemyLifePoint <= 0 && playerLifePoint <= 0){
         alert("Match nul");
         fightPhaseArmor();
-        ennemyLifePointArmor = 10;
-        playerLifePointArmor = 10;
+        ennemyLifePoint = 10;
+        playerLifePoint = 10;
     }
-    if (ennemyLifePointArmor <= 0){
+    if (ennemyLifePoint <= 0){
         alert("Tu as gagné !");
         winLootArmor();
-        ennemyLifePointArmor = 10;
-        playerLifePointArmor = 10;
+        ennemyLifePoint = 10;
+        playerLifePoint = 10;
     }
-    if (playerLifePointArmor <= 0){
+    if (playerLifePoint <= 0){
         alert("Tu as perdu");
         fightPhaseArmor();
-        ennemyLifePointArmor = 10;
-        playerLifePointArmor = 10;
+        ennemyLifePoint = 10;
+        playerLifePoint = 10;
     }
 }
 
@@ -507,6 +362,5 @@ function winLootArmor(){
 
 const btnFightArmor = document.querySelector('#imgFightButtonArmor');
 btnFightArmor.addEventListener('click', fightArmor);
-
 
 
