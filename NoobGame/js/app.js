@@ -5,8 +5,32 @@ function generernombre() {
     return nombre;
 }
 
-/* Déclencher le loot d'épée */
+/* La table de loot */
+function loot(createItem){
 
+    nb = generernombre()
+
+    if (nb <= 30) {
+        createItem('trash')
+    }
+    if (nb >= 31 && nb <= 55) {
+        createItem('common')
+    }
+    if (nb >= 56 && nb <= 75) {
+        createItem('uncommon')
+    }
+    if (nb >= 76 && nb <= 90) {
+        createItem('rare')
+    }
+    if (nb >= 91 && nb <= 97) {
+        createItem('epik')   
+    }
+    if (nb >= 98) {
+        createItem('legendary')
+    }
+}
+
+/* Créer le loot d'épée */
 function createSword(quality){
     const placeSword = document.querySelector('#swordInventory')
     const sword = document.createElement("img");
@@ -14,32 +38,7 @@ function createSword(quality){
     sword.classList.add('equipement', quality);
     placeSword.append(sword);
 }
-
-function lootSword(){
-
-    nb = generernombre()
-
-    if (nb <= 30) {
-        createSword('trash')
-    }
-    if (nb >= 31 && nb <= 55) {
-        createSword('common')
-    }
-    if (nb >= 56 && nb <= 75) {
-        createSword('uncommon')
-    }
-    if (nb >= 76 && nb <= 90) {
-        createSword('rare')
-    }
-    if (nb >= 91 && nb <= 97) {
-        createSword('epik')   
-    }
-    if (nb >= 98) {
-        createSword('legendary')
-    }
-}
-/*Déclencher le loot de bouclier */
-
+/* Créer le loot de bouclier */
 function createShield(quality){
     const placeShield = document.querySelector('#shieldInventory')
     const shield = document.createElement("img");
@@ -47,33 +46,7 @@ function createShield(quality){
     shield.classList.add('equipement', quality);
     placeShield.append(shield);
 }
-
-function lootShield(){
-
-    nb = generernombre()
-
-    if (nb <= 30) {
-        createShield('trash')
-    }
-    if (nb >= 31 && nb <= 55) {
-        createShield('common')
-    }
-    if (nb >= 56 && nb <= 75) {
-        createShield('uncommon')
-    }
-    if (nb >= 76 && nb <= 90) {
-        createShield('rare')
-    }
-    if (nb >= 91 && nb <= 97) {
-        createShield('epik')   
-    }
-    if (nb >= 98) {
-        createShield('legendary')
-    }
-}
-
-/* Loot d'armure */
-
+/* Créer le Loot d'armure */
 function createArmor(quality){
     const placeArmor = document.querySelector('#armorInventory')
     const armor = document.createElement("img");
@@ -81,34 +54,11 @@ function createArmor(quality){
     armor.classList.add('equipement', quality);
     placeArmor.append(armor);
 }
-function lootArmor(){
-
-    nb = generernombre()
-
-    if (nb <= 30) {
-        createArmor('trash')
-    }
-    if (nb >= 31 && nb <= 55) {
-        createArmor('common')
-    }
-    if (nb >= 56 && nb <= 75) {
-        createArmor('uncommon')
-    }
-    if (nb >= 76 && nb <= 90) {
-        createArmor('rare')
-    }
-    if (nb >= 91 && nb <= 97) {
-        createArmor('epik')   
-    }
-    if (nb >= 98) {
-        createArmor('legendary')
-    }
-}
 
 /* Phase de combats*/
 const menuDisplay = document.querySelector('.game');
-/* Portail combat épée*/
 
+/* Portail combat épée*/
 function fightPhaseSword(){
     const fightSwordDisplay = document.querySelector('.fightSword');
     menuDisplay.classList.toggle("hidden");
@@ -121,7 +71,6 @@ const buttonSwordDungeon = document.querySelector("#swordPortal");
 buttonSwordDungeon.addEventListener("click", fightPhaseSword)
 
 /* Portail combat bouclier*/
-
 function fightPhaseShield(){
     const fightShieldDisplay = document.querySelector('.fightShield');
 
@@ -287,7 +236,7 @@ function fightSword() {
 
 function winLootSword(){
         fightPhaseSword();
-        lootSword();
+        loot(createSword);
     }
 
 const btnFightSword = document.querySelector('#imgFightButtonSword');
@@ -322,7 +271,7 @@ function fightShield() {
 
 function winLootShield(){
     fightPhaseShield();
-    lootShield();
+    loot(createShield);
 }
 
 const btnFightShield = document.querySelector('#imgFightButtonShield');
@@ -357,7 +306,7 @@ function fightArmor() {
 
 function winLootArmor(){
     fightPhaseArmor();
-    lootArmor();
+    loot(createArmor);
 }
 
 const btnFightArmor = document.querySelector('#imgFightButtonArmor');
