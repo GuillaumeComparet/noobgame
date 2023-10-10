@@ -1,3 +1,25 @@
+/* Essais sur les classes, rien de fonctionnel, seulement le visuel */
+const menuDisplay = document.querySelector('.game');
+const classDisplay = document.querySelector('.selectClass')
+
+function closeClass(){
+    menuDisplay.classList.toggle("hidden");
+    classDisplay.classList.toggle("hidden");
+}
+
+/* Choix du Warrior */
+const chooseWarrior = document.querySelector('#selectWarrior')
+chooseWarrior.addEventListener('click', closeClass)
+/* Choix du Paladin*/
+const choosePaladin = document.querySelector('#selectPaladin')
+choosePaladin.addEventListener('click', closeClass)
+/* Choix du chaman */
+const chooseChaman = document.querySelector('#selectChaman')
+chooseChaman.addEventListener('click', closeClass)
+
+
+
+/* PARTIE FONCTIONNELLE*/
 /* Fonction générer nombre aléatoire pour les loot */
 
 function generernombre() {
@@ -55,8 +77,8 @@ function createArmor(quality){
     placeArmor.append(armor);
 }
 
+
 /* Phase de combats*/
-const menuDisplay = document.querySelector('.game');
 
 /* Portail combat épée*/
 function fightPhaseSword(){

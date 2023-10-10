@@ -13,9 +13,71 @@
         <p>Te voici arrivé dans N00b Game, le seul jeu dans lequel même les noob peuvent loot de l'équipement légendaire</p>
         <p>Rien de plus simple, il te suffit de rentrer dans les différents donjons par le biais des portails bleus</p>
         <p>Le contenu que tu vois ici est en développement, et sera prochainement complexifié ( rassure toi, il restera toujours accessible au n00b que tu es)</p>
+        <p>Attention : Le choix de la classe est pour le moment uniquement visuel, les fonctionnalités et apparences en jeu liées du choix de la classe arriveront plus tard</p>
     </div>
 
-    <div class="game">
+    <div class="selectClass">
+        <div class="gameClass" id="warrior">
+            <h2>Guerrier</h2>
+            <p>Le combattant de mélée par excellence</p>
+            <img src="../img/warriorclass.png" class="gameClassImg" alt="">
+            <h3>Ses capacités</h3>
+            <div id="chamanSpell">
+                <div id="heroicStrike" class="spellBox">
+                    <img src="../img/heroicstrike.jpg" class="spellImg" alt="">
+                    <p>Frappe l'ennemi avec son arme</p>
+                </div>
+                <div id="stun" class="spellBox">
+                    <img src="../img/charge.jpg" class="spellImg" alt="">
+                    <p>Inflige des dégats et étourdi l'ennemi</p>
+                </div>
+            </div>
+            <div class="classChoice" id="selectWarrior">
+                <p>Je choisis le guerrier !</p>
+            </div>
+        </div>
+        <div class="gameClass" id="paladin">
+            <h2>Paladin</h2>
+            <p>Combattant porté par la lumière</p>
+            <img src="../img/paladinclass.webp" class="gameClassImg" alt="">
+            <h3>Ses capacités</h3>
+            <div id="chamanSpell">
+                <div id="judgement" class="spellBox">
+                    <img src="../img/judgement.jpg" class="spellImg" alt="">
+                    <p>Juge l'ennemi et inflige des dégats</p>
+                </div>
+                <div id="flashLight" class="spellBox">
+                    <img src="../img/lightheal.jpg" class="spellImg" alt="">
+                    <p>Une lumière sacrée permettant de se soigner</p>
+                </div>
+            </div>
+            <div class="classChoice" id="selectPaladin">
+                <p>Je choisis le paladin !</p>
+            </div>
+        </div>
+        <div class="gameClass" id="chaman">
+            <h2>Chaman</h2>
+            <p>Un combattant polyvalent</p>
+            <img src="../img/chamanclass.webp" class="gameClassImg" alt="">
+            <h3>Ses capacités</h3>
+            <div id="chamanSpell">
+                <div id="lightBolt" class="spellBox">
+                    <img src="../img/eclair.jpg" class="spellImg" alt="">
+                    <p>Lance un éclair pour infliger des dégats</p>
+                </div>
+                <div id="healingWave" class="spellBox">
+                    <img src="../img/healingwave.jpg" class="spellImg" alt="">
+                    <p>Une vague de soin permettant de se soigner</p>
+                </div>
+            </div>
+            <div class="classChoice" id="selectChaman">
+                <p>Je choisis le chaman !</p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="game hidden">
     <div class="listDungeons">
         <div class="DungeonDesign">
             <img src="../img/portal.webp" id="swordPortal" class="portalDesign" alt="">
